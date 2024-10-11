@@ -23,3 +23,9 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+// ------> Common Method for Login <------
+
+// Cypress.Commands.add(){
+
+// }

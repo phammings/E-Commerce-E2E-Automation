@@ -6,4 +6,8 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
   },
+
+  env: {
+    URL: "https://magento.softwaretestingboard.com/customer/account/create/",
+  },
 });

@@ -1,4 +1,6 @@
 export class RegisterPage {
+  // Only Web Locators will be stored
+
   webLocators = {
     firstName: "#firstname",
     lastName: "#lastname",
@@ -6,8 +8,10 @@ export class RegisterPage {
     password: "#password",
     confirmPassword: "#password-confirmation",
     createAnAccountButton: ".action.submit.primary",
-    successMessage: "Thank you for registering with Main Website Store.",
+    successMessage: "div.message-success.success.message",
   };
+
+  // Methods
 
   openURL() {
     cy.visit(Cypress.env("URL"));
@@ -30,6 +34,6 @@ export class RegisterPage {
     cy.get(this.webLocators.createAnAccountButton).click();
   }
   successFullCreateAccountMessage() {
-    cy.contains(this.webLocators.successMessage);
+    return cy.get(this.webLocators.successMessage).should("be.visible");
   }
 }

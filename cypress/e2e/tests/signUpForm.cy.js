@@ -1,4 +1,4 @@
-import { RegisterPage } from "../../pages/newAccountRegister";
+import { RegisterPage } from "../../pages/newAccountRegisterPage";
 import registerAccountData from "../../fixtures/registerAccountData.json";
 
 const registerObj = new RegisterPage();

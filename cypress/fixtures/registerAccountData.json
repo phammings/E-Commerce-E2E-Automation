@@ -1,9 +1,14 @@
 {
+  "login": {
+    "email": "simec123r@gmail.com",
+    "password": "captain@123"
+  },
+
   "name": {
     "firstName": "Hq",
     "lastName": "Am"
   },
-  "email": "simec123@gmail.com",
+  "email": "simec123r@gmail.com",
   "password": {
     "password": "captain@123",
     "confirmPassword": "captain@123"

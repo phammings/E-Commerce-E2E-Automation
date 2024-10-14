@@ -22,4 +22,20 @@ export class whatsNewPage {
     //     expect(text1).to.eq("New Luma Yoga Collection");
     //   });
   }
+
+  // checkGridItems() {
+  //   cy.get("strong.modes-mode.active.mode-grid").first().click();
+  //   cy.get('[title="Grid"]').should("have.class");
+  // }
+
+  checkSortByDropDown() {
+    cy.get("#sorter").should("be.visible");
+    cy.get(".sorter-options option:selected")
+      .first()
+      .should("contain", "Position");
+    cy.get(".sorter-options").first().select("name");
+    cy.get(".sorter-options").should("contain", "Product Name");
+    cy.get(".sorter-options").first().select("price");
+    cy.get(".sorter-options").should("contain", "Price");
+  }
 }

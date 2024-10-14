@@ -17,5 +17,7 @@ describe("Whats New Test sUITE-2", () => {
     whatsNewPageObj
       .message()
       .should("contain.text", whatsNewData.message.titleMessage);
+
+    whatsNewPageObj.checkSortByDropDown();
   });
 });

@@ -13,11 +13,13 @@ describe("Whats New Test Suite-2", () => {
 
   it("#TC-2 Whats new ", () => {
     whatsNewPageObj.clickWhatsNew();
+    //whatsNewPageObj.newLumaYogaCollectionLink();
     whatsNewPageObj.shopNewYogaButton();
     whatsNewPageObj
       .message()
       .should("contain.text", whatsNewData.message.titleMessage);
+    whatsNewPageObj.selectCartNewLumaYogaCollection();
 
-    whatsNewPageObj.checkSortByDropDown();
+    //whatsNewPageObj.checkSortByDropDown();
   });
 });

@@ -10,6 +10,16 @@ export class whatsNewPage {
     ).click();
   }
 
+  // checking whats new page -> New Luma Yoga Collection links
+
+  // newLumaYogaCollectionLink() {
+  //   cy.get(
+  //     'a[href="https://magento.softwaretestingboard.com/collections/yoga-new.html"]'
+  //   )
+  //     .click()
+  //     .should("contain", "New Luma Yoga Collection");
+  // }
+
   shopNewYogaButton() {
     cy.get(this.webLocators.shopNewYogaButton)
       .click()
@@ -23,6 +33,11 @@ export class whatsNewPage {
     //   .then((text1) => {
     //     expect(text1).to.eq("New Luma Yoga Collection");
     //   });
+  }
+
+  selectCartNewLumaYogaCollection() {
+    cy.get("li[class ='item product product-item']").eq(0).click();
+    cy.get("span.base").should("contain", "Echo Fit Compression Short");
   }
 
   // checkGridItems() {

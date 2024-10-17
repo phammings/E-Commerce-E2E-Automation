@@ -3,7 +3,7 @@ import whatsNewData from "../../fixtures/whatsNewData.json";
 import registerAccountData from "../../fixtures/registerAccountData.json";
 const whatsNewPageObj = new whatsNewPage();
 
-describe("Whats New Test sUITE-2", () => {
+describe("Whats New Test Suite-2", () => {
   before(() => {
     cy.login(
       registerAccountData.login.email,

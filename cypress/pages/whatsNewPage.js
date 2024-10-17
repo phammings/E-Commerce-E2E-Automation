@@ -11,7 +11,9 @@ export class whatsNewPage {
   }
 
   shopNewYogaButton() {
-    cy.get(this.webLocators.shopNewYogaButton).click();
+    cy.get(this.webLocators.shopNewYogaButton)
+      .click()
+      .should("contain", "Shop New Yoga");
   }
 
   message() {
@@ -27,6 +29,8 @@ export class whatsNewPage {
   //   cy.get("strong.modes-mode.active.mode-grid").first().click();
   //   cy.get('[title="Grid"]').should("have.class");
   // }
+
+  // Checking dropdown in whats new linked page
 
   checkSortByDropDown() {
     cy.get("#sorter").should("be.visible");

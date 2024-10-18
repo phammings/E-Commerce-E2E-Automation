@@ -21,5 +21,7 @@ describe("Whats New Test Suite-2", () => {
     whatsNewPageObj.selectCartNewLumaYogaCollection();
 
     //whatsNewPageObj.checkSortByDropDown();
+    // update...
   });
 });
+

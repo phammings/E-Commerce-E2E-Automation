@@ -2,6 +2,7 @@ export class whatsNewPage {
   webLocators = {
     shopNewYogaButton: ".more.button",
     whatsNewTopTitleText: "span.base", // className = [class="base"]
+    addToCartText: ".message-success.success.message",
   };
 
   clickWhatsNew() {
@@ -35,9 +36,28 @@ export class whatsNewPage {
     //   });
   }
 
+  // Select the carts
   selectCartNewLumaYogaCollection() {
     cy.get("li[class ='item product product-item']").eq(0).click();
     cy.get("span.base").should("contain", "Echo Fit Compression Short");
+  }
+
+  selectSizeOfDress() {
+    cy.get("#option-label-size-143-item-171").click();
+  }
+  selectColourOfDress() {
+    cy.get("#option-label-color-93-item-57").click();
+  }
+  typeQty() {
+    cy.get('input[name="qty"]').clear();
+    cy.get('input[name="qty"]').type("4");
+  }
+  addToCartButton() {
+    cy.get('button[class="action primary tocart"]').click();
+  }
+
+  addToCartmessage() {
+    return cy.get(this.webLocators.addToCartText);
   }
 
   // checkGridItems() {

@@ -19,9 +19,14 @@ describe("Whats New Test Suite-2", () => {
       .message()
       .should("contain.text", whatsNewData.message.titleMessage);
     whatsNewPageObj.selectCartNewLumaYogaCollection();
+    whatsNewPageObj.selectSizeOfDress();
+    whatsNewPageObj.selectColourOfDress();
+    whatsNewPageObj.typeQty();
+    whatsNewPageObj.addToCartButton();
+    whatsNewPageObj
+      .addToCartmessage()
+      .should("contain.text", whatsNewData.message.addToCartMessage);
 
     //whatsNewPageObj.checkSortByDropDown();
-    // update...
   });
 });
-

@@ -26,6 +26,7 @@ describe("Whats New Test Suite-2", () => {
     whatsNewPageObj
       .addToCartmessage()
       .should("contain.text", whatsNewData.message.addToCartMessage);
+    whatsNewPageObj.cartCheckOut();
 
     //whatsNewPageObj.checkSortByDropDown();
   });

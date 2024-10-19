@@ -57,7 +57,14 @@ export class whatsNewPage {
   }
 
   addToCartmessage() {
-    return cy.get(this.webLocators.addToCartText);
+    return cy.get(this.webLocators.addToCartText).click();
+  }
+
+  cartCheckOut() {
+    cy.get('a[href="https://magento.softwaretestingboard.com/checkout/cart/"]')
+      .first()
+      .click();
+    cy.get('[class="action viewcart"]').click();
   }
 
   // checkGridItems() {

@@ -3,6 +3,19 @@
     "titleMessage": "New Luma Yoga Collection",
     "addToCartMessage": "You added Echo Fit Compression Short to your "
 
+  },
+  "shippingInfo":{
+
+  "name": {
+  "firstName": "Raju",
+  "lastName": "Ahmed"
+},
+  "company": "Microsoft Heaven",
+  "streetAddress": "Mirpur-2",
+  "city": "Dhaka",
+  "postalCode": "1216",
+  "telephone": "01890219995"
+
   }
   
 }

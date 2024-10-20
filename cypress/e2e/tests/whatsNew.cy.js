@@ -27,7 +27,28 @@ describe("Whats New Test Suite-2", () => {
       .addToCartmessage()
       .should("contain.text", whatsNewData.message.addToCartMessage);
     whatsNewPageObj.cartCheckOut();
-
+    whatsNewPageObj.proceedToCheckout();
+    whatsNewPageObj.verifyShippingText();
+    whatsNewPageObj.shippingAddressFName(
+      whatsNewData.shippingInfo.name.firstName
+    );
+    whatsNewPageObj.shippingAddressLName(
+      whatsNewData.shippingInfo.name.lastName
+    );
+    whatsNewPageObj.shippingAddressCompany(whatsNewData.shippingInfo.company);
+    whatsNewPageObj.shippingAddressStreet(
+      whatsNewData.shippingInfo.streetAddress
+    );
+    whatsNewPageObj.shippingAddressCity(whatsNewData.shippingInfo.city);
+    whatsNewPageObj.stateByDropDown();
+    whatsNewPageObj.shippingAddressPostalCode(
+      whatsNewData.shippingInfo.postalCode
+    );
+    whatsNewPageObj.countryByDropDown();
+    whatsNewPageObj.shippingAddressTelephone(
+      whatsNewData.shippingInfo.telephone
+    );
+    whatsNewPageObj.shippingMethods();
     //whatsNewPageObj.checkSortByDropDown();
   });
 });

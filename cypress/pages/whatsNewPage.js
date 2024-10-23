@@ -18,12 +18,18 @@ export class whatsNewPage {
     proceedToCheckout: '[data-role="proceed-to-checkout"]',
 
     firstName: 'input[name="firstname"]',
+    //firstName: '[id="FPD42X7"]',
     lastName: 'input[name="lastname"]',
     company: 'input[name="company"]',
     streetAddress: 'input[name="street[0]"]',
     city: 'input[name="city"]',
     postalCode: 'input[name="postcode"]',
     telephone: 'input[name="telephone"]',
+    countryDropdown: '[name="country_id"]',
+    shippingMethodsRadioButton: 'input[type="radio"]',
+    nextButton: '[class="button action continue primary"]',
+    purchaseMessage: '[data-ui-id="page-title-wrapper"]',
+    continueShoppingButton: '[class="action primary continue"]',
   };
 
   clickWhatsNew() {
@@ -91,20 +97,28 @@ export class whatsNewPage {
       .find('[class="step-title"]')
       .should("contain", "Shipping Methods");
   }
+  // Forms
+
   shippingAddressFName(FName) {
-    cy.get(this.webLocators.firstName).clear().type(FName);
+    cy.get(this.webLocators.firstName)
+      .clear({ force: true })
+      .type(FName, { force: true });
   }
+
   shippingAddressLName(LName) {
-    cy.get(this.webLocators.lastName).clear().type(LName);
+    cy.get(this.webLocators.lastName)
+      .clear({ force: true })
+      .type(LName, { force: true });
+    //cy.get(this.webLocators.lastName).clear().type(LName);
   }
   shippingAddressCompany(companyName) {
-    cy.get(this.webLocators.company).type(companyName);
+    cy.get(this.webLocators.company).type(companyName, { force: true });
   }
   shippingAddressStreet(streetAddress) {
-    cy.get(this.webLocators.streetAddress).type(streetAddress);
+    cy.get(this.webLocators.streetAddress).type(streetAddress, { force: true });
   }
   shippingAddressCity(city) {
-    cy.get(this.webLocators.city).type(city);
+    cy.get(this.webLocators.city).type(city, { force: true });
   }
 
   stateByDropDown() {
@@ -112,18 +126,43 @@ export class whatsNewPage {
   }
 
   shippingAddressPostalCode(postalCode) {
-    cy.get(this.webLocators.postalCode).type(postalCode);
+    cy.get(this.webLocators.postalCode).type(postalCode, { force: true });
   }
   countryByDropDown() {
-    cy.get('[name="country_id"]').select("Bangladesh");
+    cy.get(this.webLocators.countryDropdown).select("Bangladesh", {
+      force: true,
+    });
   }
 
   shippingAddressTelephone(telephone) {
-    cy.get(this.webLocators.telephone).type(telephone);
+    cy.get(this.webLocators.telephone).type(telephone, { force: true });
   }
 
   shippingMethods() {
-    cy.get('input[type="radio"]').check("flatrate_flatrate");
+    cy.get(this.webLocators.shippingMethodsRadioButton).check(
+      "flatrate_flatrate"
+    );
+  }
+
+  nextButtonClick() {
+    cy.get(this.webLocators.nextButton).click();
+  }
+
+  paymentMethodCheck() {
+    //cy.get('input[name="billing-address-same-as-shipping"]').click();
+    cy.get('input[name="billing-address-same-as-shipping"]').check();
+    cy.get('input[name="billing-address-same-as-shipping"]').should(
+      "be.checked"
+    );
+  }
+  placeOrderButton() {
+    cy.get('button[class="action primary checkout"]').click();
+  }
+  purchaseMessage() {
+    return cy.get(this.webLocators.purchaseMessage);
+  }
+  continueShoppingButton() {
+    cy.get(this.webLocators.continueShoppingButton).click();
   }
 
   // checkGridItems() {

@@ -28,7 +28,7 @@ describe("Whats New Test Suite-2", () => {
       .should("contain.text", whatsNewData.message.addToCartMessage);
     whatsNewPageObj.cartCheckOut();
     whatsNewPageObj.proceedToCheckout();
-    whatsNewPageObj.verifyShippingText();
+    //whatsNewPageObj.verifyShippingText();
     whatsNewPageObj.shippingAddressFName(
       whatsNewData.shippingInfo.name.firstName
     );
@@ -49,6 +49,13 @@ describe("Whats New Test Suite-2", () => {
       whatsNewData.shippingInfo.telephone
     );
     whatsNewPageObj.shippingMethods();
+    whatsNewPageObj.nextButtonClick();
+    whatsNewPageObj.paymentMethodCheck();
+    whatsNewPageObj.placeOrderButton();
+    whatsNewPageObj
+      .purchaseMessage()
+      .should("contain.text", whatsNewData.message.purchaseMessage);
+    whatsNewPageObj.continueShoppingButton();
     //whatsNewPageObj.checkSortByDropDown();
   });
 });

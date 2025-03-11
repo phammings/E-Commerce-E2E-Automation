@@ -19,5 +19,9 @@
     "cypress": "^13.17.0",
     "cypress-xpath": "^2.0.1",
     "nyc": "^17.1.0"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "openai": "^4.87.2"
   }
 }

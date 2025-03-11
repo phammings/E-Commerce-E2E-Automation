@@ -16,7 +16,7 @@ export class whatsNewPage {
       'a[href="https://magento.softwaretestingboard.com/checkout/cart/"]',
 
     proceedToCheckout: '[data-role="proceed-to-checkout"]',
-
+    email: '/html/body/div[2]/main/div[2]/div/div[2]/div[4]/ol/li[1]/div[2]/form[1]/fieldset/div/div/input',
     firstName: 'input[name="firstname"]',
     //firstName: '[id="FPD42X7"]',
     lastName: 'input[name="lastname"]',
@@ -99,6 +99,8 @@ export class whatsNewPage {
   }
   // Forms
 
+
+
   shippingAddressFName(FName) {
     cy.get(this.webLocators.firstName)
       .clear({ force: true })
@@ -111,6 +113,14 @@ export class whatsNewPage {
       .type(LName, { force: true });
     //cy.get(this.webLocators.lastName).clear().type(LName);
   }
+
+  shippingEmail(email) {
+    cy.xpath(this.webLocators.email)
+      .should('be.visible') 
+      .clear() 
+      .type(email); 
+  }
+  
   shippingAddressCompany(companyName) {
     cy.get(this.webLocators.company).type(companyName, { force: true });
   }

@@ -25,7 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 // ------> Common Method for Login <------
-
+require('cypress-xpath');
 Cypress.Commands.add("login", (email, password) => {
   cy.visit("");
 

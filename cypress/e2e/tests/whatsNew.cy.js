@@ -29,11 +29,15 @@ describe("Whats New Test Suite-2", () => {
     whatsNewPageObj.cartCheckOut();
     whatsNewPageObj.proceedToCheckout();
     //whatsNewPageObj.verifyShippingText();
+ 
     whatsNewPageObj.shippingAddressFName(
       whatsNewData.shippingInfo.name.firstName
     );
     whatsNewPageObj.shippingAddressLName(
       whatsNewData.shippingInfo.name.lastName
+    );
+    whatsNewPageObj.shippingEmail(
+      whatsNewData.shippingInfo.email
     );
     whatsNewPageObj.shippingAddressCompany(whatsNewData.shippingInfo.company);
     whatsNewPageObj.shippingAddressStreet(
